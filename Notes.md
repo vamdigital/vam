@@ -13,6 +13,7 @@
 - [ ] RenderProps
 - [ ] HOC
 - [ ] Typescript -
+- [ ] How to use next/link to link the static assets like pdf from public folder
 
 **Photos**
 

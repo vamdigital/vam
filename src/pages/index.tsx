@@ -11,11 +11,13 @@ const Home: NextPage = () => {
         <meta name="description" content="A digital dwelling of VAM Digital" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="grid grid-cols-2 gap-20 items-center justify-center">
-        <div>
-          <h1 className="text-4xl mb-2">Hello, I&apos;m Vaibhav </h1>
+      <div className="grid md:grid-cols-2 md:gap-20 md:items-center md:justify-center">
+        <div className="order-2 md:order-1">
+          <h1 className="text-4xl mb-2 mt-4 md:mt-0">
+            Hello, I&apos;m Vaibhav{' '}
+          </h1>
           <p>Welcome to my digital landscape.</p>
-          <p className="mt-10 mb-10 text-justify">
+          <p className="mt-6 md:mt-10 mb-10 text-justify">
             I’m a Front-End Developer, working under the brand of VAM Digital. I
             have been working in the digital space for almost a decade now and
             been part of various projects and industries from healthcare patient
@@ -36,7 +38,7 @@ const Home: NextPage = () => {
           </Link>
         </div>
 
-        <div>
+        <div className="order-1 md:order-2">
           <Image
             src="/assets/general/home-hero.png"
             width={580}

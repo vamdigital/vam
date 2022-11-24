@@ -11,7 +11,7 @@ export const ThemeSwitch: React.FC<Props> = ({
 }): JSX.Element => {
   const isDark = theme === 'dark'
   const color = isDark ? 'rgb(243 244 246)' : 'rgb(31 41 55)'
-  const maskColor = isDark ? 'rgb(31 41 55)' : 'rgb(243 244 246)'
+  const maskColor = isDark ? 'rgb(31 41 55)' : 'rgb(249 250 251)'
   return (
     <button
       className="theme-button"
