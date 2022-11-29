@@ -42,8 +42,32 @@ body {
   }
 }
 
+.prose {
+  @apply dark:text-gray-100 text-gray-700;
+  max-width: 80ch;
+  padding: 0 16px;
+}
+
+.prose a {
+  @apply dark:text-yellow-500 text-red-500;
+}
+.prose :where(pre) {
+  padding: 0;
+}
+
 .prose i {
   @apply dark:text-cyan-400 not-italic text-blue-700;
+}
+
+.prose pre {
+  @apply border border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-900;
+  white-space: pre-wrap;
+  max-width: 100%;
+  height: auto;
+}
+
+.prose code {
+  @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded-lg;
 }
 
 .prose pre code {
@@ -67,7 +91,8 @@ body {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  @apply text-gray-700 dark:text-gray-300;
+  @apply text-gray-500 dark:text-gray-500;
+  @apply italic;
 }
 
 .token.punctuation {
@@ -138,8 +163,9 @@ pre {
 
 .rehype-code-title + pre {
   @apply mt-0 rounded-t-none;
+  @apply p-6;
 }
 
 .highlight-line {
-  @apply block px-4 -mx-4 bg-gray-100 border-l-4 border-blue-500 dark:bg-gray-800;
+  @apply block px-4 -mx-4 border-l-4 border-blue-500 dark:bg-gray-800;
 }

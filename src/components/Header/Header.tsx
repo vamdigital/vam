@@ -14,7 +14,7 @@ export const Header: React.FC<Props> = ({ children }) => {
           <a className="hover:underline underline-offset-8">VAM Digital</a>
         </Link>
       </h4>
-      <div className="flex justify-between items-center mb-8 md:mb-0">
+      <div className="flex justify-between items-center md:mb-0">
         <Navigation />
         {children}
       </div>

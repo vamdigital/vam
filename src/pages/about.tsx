@@ -5,11 +5,11 @@ import React from 'react'
 export const About: NextPage = () => {
   return (
     <div className="flex flex-col items-start min-h-[70vh]">
-      <section className="grid grid-cols-12 gap-8 w-full place-items-end">
+      <section className="grid grid-cols-12 gap-8 w-full place-items-center">
         <article className="col-start-1 col-span-8">
           <h1 className="text-4xl">About</h1>
           <p>an introduction into my space</p>
-          <p className="py-10 text-justify">
+          <p className="mt-10 mb-4 text-justify">
             Hi, I&apos;m Vaibhav, a Front-end engineer who is passionate about
             the art and science of the web, which connects us through its
             inter-woven network. I began my journey into web development by
@@ -19,7 +19,17 @@ export const About: NextPage = () => {
             balance of creativity and functionality which is essential to create
             a robust web solution. Then came along the front-end frameworks like
             angular, emberJS, React, NEXTJS with state management tools like
-            Redux.
+            Redux.{' '}
+          </p>
+          <p className="text-justify mb-4">
+            Currently I am using React, Typescript, NEXTJS, RTK &amp; RTKQ
+            within a mono-repo created using NX framework. Testing framework of
+            choice is Jest, React Testing library and Cypress.
+          </p>
+          <p className="text-justify mb-4">
+            In my spare time, I love strumming few strings on guitar ( still in
+            learning stage ) and playing with my kids. I also like to draw and
+            doodle.
           </p>
           <p className="text-justify">
             The goal of this site is to jot down my learning in form of a
@@ -29,7 +39,7 @@ export const About: NextPage = () => {
             platform to showcase my humble ventures.
           </p>
         </article>
-        <aside className="col-start-10 col-span-3 p-4 bg-gray-200 dark:bg-gray-700  rounded-xl mt-1 text-center py-10">
+        <aside className="lg:col-start-10 md:col-span-4 lg:col-span-3 p-4 bg-gray-200 dark:bg-gray-700  rounded-xl mt-1 text-center py-10">
           <div className="flex justify-center">
             <Image
               src="/assets/general/vaibhav.jpg"

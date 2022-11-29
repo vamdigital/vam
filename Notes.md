@@ -1,9 +1,11 @@
 **_Ideas for blogs posts_**
 
-- [ ] Arrange all assets for images from unsplash
+- [x] Arrange all assets for images from unsplash
 - [ ] Add credits in the footer and make a page and give credit to all photographs
-- [ ] Navigation
-  - [ ] Home | Journal | About | dark / light mode
+- [x] Navigation
+  - [x] Home | Journal | About | dark / light mode
+- [ ] Back to overview / journal link on top of the posts
+- [ ] Add animation of the cards on journal to come in
 - [ ] Article on useContext
 - [ ] Article on RTK
 - [ ] Article on RTKQ
@@ -13,7 +15,10 @@
 - [ ] RenderProps
 - [ ] HOC
 - [ ] Typescript -
-- [ ] How to use next/link to link the static assets like pdf from public folder
+- [ ] check insta folder and write blog
+- [ ] create holding page if blog post is not there - brewing up coffe pic or something
+- [ ] create contact us page
+- [x] How to use next/link to link the static assets like pdf from public folder
 
 **Photos**
 

@@ -24,7 +24,7 @@ const Home: NextPage = () => {
             engagement agencies to digital advertising agencies to famous
             fashion labels to name a few. Over the years, I have gained
             experience designing and developing user-centric UI solutions to the
-            most complex user journies.
+            most complex user journeys.
           </p>
           <Link href="/journal">
             <a
@@ -41,8 +41,8 @@ const Home: NextPage = () => {
         <div className="order-1 md:order-2">
           <Image
             src="/assets/general/home-hero.png"
-            width={580}
-            height={550}
+            width={645}
+            height={684}
             alt="home page artwork"
           />
         </div>
