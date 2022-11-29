@@ -26,7 +26,7 @@ const Home: NextPage = () => {
             experience designing and developing user-centric UI solutions to the
             most complex user journeys.
           </p>
-          <Link href="/journal">
+          <Link href="/">
             <a
               className="inline-flex p-6 py-4 rounded-full
                hover:bg-gray-300 hover:text-gray-800
