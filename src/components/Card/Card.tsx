@@ -1,3 +1,4 @@
+import moment from 'moment'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -9,6 +10,8 @@ interface Props {
   slug: string
   cardExcerpt: string
   tags: string[]
+  readingTime: number
+  postDate: string
 }
 
 export const Card: React.FC<Props> = ({
@@ -17,7 +20,11 @@ export const Card: React.FC<Props> = ({
   cardExcerpt,
   tags,
   slug,
+  readingTime,
+  postDate,
 }) => {
+  const dt = new Date(postDate)
+  const formattedDate = moment(dt).format('MMMM Do, YYYY')
   return (
     <div className="flex flex-col max-w-sm rounded overflow-hidden dark:bg-gray-100 bg-gray-700 shadow-lg">
       <Image
@@ -31,6 +38,9 @@ export const Card: React.FC<Props> = ({
         alt="context"
       />
       <div className="px-6 py-4 flex flex-col flex-1">
+        <p className="dark:text-gray-700 text-gray-100 text-base mb-4 text-xs">
+          {formattedDate} - <span>{readingTime} min read</span>
+        </p>
         <h2 className="font-bold text-xl mb-2 text-gray-100 dark:text-gray-700">
           <Link href={`/journal/${slug}`}>{cardTitle}</Link>
         </h2>
@@ -38,7 +48,7 @@ export const Card: React.FC<Props> = ({
           {cardExcerpt}
         </p>
       </div>
-      <div className="px-6 pt-4 pb-2">
+      <div className="px-6 pt-4 pb-4">
         {tags &&
           tags.map(tag => (
             <span

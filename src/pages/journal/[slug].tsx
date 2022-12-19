@@ -12,6 +12,7 @@ import { getPostFromSlug, getSlugs, PostMeta } from 'api'
 // import 'highlight.js/styles/github-dark.css'
 import { shimmer, toBase64 } from 'utils/image-utils'
 import moment from 'moment'
+import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis'
 
 interface MDXPost {
   source: MDXRemoteSerializeResult<
@@ -69,6 +70,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         rehypeCodeTitles,
         rehypePrism,
         [rehypeAutolinkHeadings, { behavior: 'wrap' }],
+        rehypeAccessibleEmojis,
         // rehypeHighlight,
       ],
       format: 'mdx',

@@ -4,9 +4,10 @@ import React from 'react'
 
 interface Props {
   posts: PostMeta[]
+  readingTime: number
 }
 
-export const Articles: React.FC<Props> = ({ posts }) => {
+export const Articles: React.FC<Props> = ({ posts, readingTime }) => {
   return (
     <>
       {posts.map(post => (
@@ -17,6 +18,8 @@ export const Articles: React.FC<Props> = ({ posts }) => {
           cardExcerpt={post.excerpt}
           tags={post.tags}
           slug={post.slug}
+          readingTime={readingTime}
+          postDate={post.date}
         />
       ))}
     </>
