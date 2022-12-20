@@ -27,9 +27,9 @@ export const ComingSoon: NextPageWithLayout = () => {
         </div>
         <div>
           <Image
-            src="/assets/general/404.png"
-            width={580}
-            height={550}
+            src="/assets/general/comingsoon.png"
+            width={3000}
+            height={2500}
             alt="home page artwork"
           />
         </div>
