@@ -1,9 +1,19 @@
-import type { NextPage } from 'next'
+import type { ReactElement } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { NextPageWithLayout } from './_app'
+import dynamic from 'next/dynamic'
 
-const Home: NextPage = () => {
+// To prevent it from being ssr rendered
+const LayoutComponent = dynamic(
+  () => import('../components/Layout/Layout').then(mod => mod.Layout),
+  {
+    ssr: false,
+  }
+)
+
+const Home: NextPageWithLayout = () => {
   return (
     <>
       <Head>
@@ -49,6 +59,10 @@ const Home: NextPage = () => {
       </div>
     </>
   )
+}
+
+Home.getLayout = function getLayout(page: ReactElement) {
+  return <LayoutComponent>{page}</LayoutComponent>
 }
 
 export default Home

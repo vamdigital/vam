@@ -1,8 +1,18 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import React from 'react'
+import React, { ReactElement } from 'react'
+import { NextPageWithLayout } from './_app'
+import dynamic from 'next/dynamic'
 
-export const Custom404: React.FC = () => {
+// To prevent it from being ssr rendered
+const LayoutComponent = dynamic(
+  () => import('../components/Layout/Layout').then(mod => mod.Layout),
+  {
+    ssr: false,
+  }
+)
+
+export const Custom404: NextPageWithLayout = () => {
   return (
     <section className="container px-6">
       <div className="grid grid-cols-2 gap-20 items-center justify-center">
@@ -35,6 +45,10 @@ export const Custom404: React.FC = () => {
       </div>
     </section>
   )
+}
+
+Custom404.getLayout = function getLayout(page: ReactElement) {
+  return <LayoutComponent>{page}</LayoutComponent>
 }
 
 export default Custom404

@@ -1,8 +1,17 @@
-import { NextPage } from 'next'
 import Image from 'next/image'
-import React from 'react'
+import React, { ReactElement } from 'react'
+import { NextPageWithLayout } from './_app'
+import dynamic from 'next/dynamic'
 
-export const About: NextPage = () => {
+// To prevent it from being ssr rendered
+const LayoutComponent = dynamic(
+  () => import('../components/Layout/Layout').then(mod => mod.Layout),
+  {
+    ssr: false,
+  }
+)
+
+export const About: NextPageWithLayout = () => {
   return (
     <div className="flex flex-col items-start min-h-[70vh]">
       <section className="grid grid-cols-12 gap-8 w-full place-items-center">
@@ -68,6 +77,10 @@ export const About: NextPage = () => {
       </section>
     </div>
   )
+}
+
+About.getLayout = function getLayout(page: ReactElement) {
+  return <LayoutComponent>{page}</LayoutComponent>
 }
 
 export default About
