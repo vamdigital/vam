@@ -10,9 +10,8 @@ export const Navigation: React.FC = () => {
         <li className="font-medium text-sm md:text-base">
           <Link href="/">
             <a
-              className={`hover:underline underline-offset-4 ${
-                router.pathname === '/' ? 'underline underline-offset-4' : ''
-              }`}
+              className={`hover:underline underline-offset-4 ${router.pathname === '/' ? 'underline underline-offset-4' : ''
+                }`}
             >
               Home
             </a>
@@ -34,24 +33,32 @@ export const Navigation: React.FC = () => {
         <li className="font-medium text-sm md:text-base">
           <Link href="/about">
             <a
-              className={`hover:underline underline-offset-4 ${
-                router.pathname == '/about'
+              className={`hover:underline underline-offset-4 ${router.pathname == '/about'
                   ? 'underline underline-offset-4'
                   : ''
-              }`}
+                }`}
             >
               About
             </a>
           </Link>
         </li>
         <li className="font-medium text-sm md:text-base">
-          <Link href="/contact">
+          <Link href="/illustrations">
             <a
-              className={`hover:underline underline-offset-4 ${
-                router.pathname === '/contact'
+              className={`hover:underline underline-offset-4 ${router.pathname == '/illustrations'
                   ? 'underline underline-offset-4'
                   : ''
-              }`}
+                }`}
+            >Illustrations</a>
+          </Link>
+        </li>
+        <li className="font-medium text-sm md:text-base">
+          <Link href="/contact">
+            <a
+              className={`hover:underline underline-offset-4 ${router.pathname === '/contact'
+                  ? 'underline underline-offset-4'
+                  : ''
+                }`}
             >
               Contact
             </a>
