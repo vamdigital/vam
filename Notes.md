@@ -12,7 +12,6 @@
 - [ ] Article on Reduce
 - [ ] Article on Generic Component
 - [ ] useHooks
-- [ ] useReducer
 - [ ] RenderProps
 - [ ] HOC
 - [ ] Typescript -

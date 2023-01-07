@@ -3,13 +3,13 @@ import Head from 'next/head'
 import { getAllPosts, PostMeta } from 'api'
 import { Articles } from '@components/Articles'
 
-interface TagPageProps {
+export default function TagPage({
+  slug,
+  posts,
+}: {
   slug: string
   posts: PostMeta[]
-  readingTime: number
-}
-
-export default function TagPage({ slug, posts, readingTime }: TagPageProps) {
+}) {
   return (
     <>
       <Head>
@@ -19,7 +19,7 @@ export default function TagPage({ slug, posts, readingTime }: TagPageProps) {
       <div className="flex flex-col items-start min-h-[70vh]">
         <h1 className="text-4xl flex">{slug}</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 mb-10">
-          <Articles posts={posts} readingTime={readingTime} />
+          <Articles posts={posts} />
         </div>
       </div>
     </>
@@ -34,7 +34,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       slug,
       posts: posts.map(post => post.meta),
-      readingTime: posts.map(post => post.readingTime),
     },
   }
 }
