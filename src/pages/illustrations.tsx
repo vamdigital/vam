@@ -1,8 +1,7 @@
 import React, { ReactElement } from 'react'
 import dynamic from 'next/dynamic'
 import { NextPageWithLayout } from './_app'
-import fs from 'fs'
-import path from 'path'
+import { server } from 'config'
 
 // To Prevent it from being ssr rendered
 const LayoutComponent = dynamic(() => import('../components/Layout/Layout').then(mod => mod.Layout), { ssr: false })
@@ -21,10 +20,10 @@ IllustrationPage.getLayout = function getLayout(page: ReactElement) {
 }
 
 IllustrationPage.getInitialProps = async function() {
-  const assetsDir = 'assets/journal' // change this to assets/illustrations when we start putting illustration 
-  const dir = path.resolve('./public', assetsDir)
-  const fileNames = fs.readdirSync(dir)
 
+  const res = await fetch(`${server}/api/fileNames`)
+  const result = await res.json()
+  const { fileNames } = result
   return { fileNames }
 }
 
